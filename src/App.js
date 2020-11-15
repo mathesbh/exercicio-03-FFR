@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "./styles.css";
-import { MoviesList } from "./components/MoviesList";
-import { MoviesService } from "./api/MoviesService";
+import React from "react";
+import { Link } from 'react-router-dom'
+import { ApplicationRoutes } from "./ApplicationRoutes";
 
 export default function App() {
-  const [movies, setMovies] = useState([]);
-
-  const getMovies = async () => {
-    const {
-      data: { results }
-    } = await MoviesService.getPopularMovies();
-
-    setMovies(results);
-  };
-  useEffect(() => {
-    getMovies();
-  }, []);
-
+  
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <MoviesList movies={movies} />
+    <div className="container">
+      <nav>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/movies'>Movies</Link></li>
+        </ul>
+      </nav>
+      <ApplicationRoutes />
     </div>
-  );
+  )
 }
