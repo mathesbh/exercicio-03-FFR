@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { MoviesService } from '../api/MoviesService'
 import { favoriteMovie } from '../actions/favoriteActions'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 export const MovieDetails = (props) => {
@@ -16,6 +16,7 @@ export const MovieDetails = (props) => {
     }, [])
 
     const dispatch = useDispatch()
+    const favorites = useSelector(state => state.favorite.favorite)
 
     return (
         <div className="container">
@@ -24,6 +25,13 @@ export const MovieDetails = (props) => {
             <h3>Overview:  { movie.data.overview }</h3>
             <p>Votes: { movie.data.vote_average }</p>
             <button onClick={() => dispatch(favoriteMovie(movie.data.title))}>Favorite Movie</button>
+            <span>
+                { favorites.map(m => {
+                    if(m.playload === movie.data.title){
+                        return <strong> This movie is included in the favorites movies list!</strong>
+                    } 
+                })}
+            </span>
         </div>
     )
 }
