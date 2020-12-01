@@ -16,10 +16,5 @@ export default function Movies() {
     getMovies();
   }, []);
 
-  return (
-    <div>
-      <h1>Movies</h1>
-      <MoviesList movies={movies} />
-    </div>
-  );
+  return <MoviesList movies={movies} />
 }
