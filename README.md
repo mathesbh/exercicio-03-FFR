@@ -1,8 +1,8 @@
-# Repositório para explorar conhecimentos do framework React (Exercício 03 e 04)
+# Repositório para explorar conhecimentos do framework React (Exercícios 03, 04, 05)
 ## Disciplina framework front-end React
 ### Pós Desenvolvimento Web Full Stack - Puc Minas
 
-Conceitos apresentados nas aulas 03 e 04, referente ao exercícios
+Conceitos apresentados nas aulas:
 
 ##### Criação de Single Page Application com múltiplas rotas e integração com APIs
 
@@ -11,3 +11,5 @@ Conceitos apresentados nas aulas 03 e 04, referente ao exercícios
 * Context API
 * Redux (Store, Actions, Reducers, Dispatchers)
 * React Redux
+* Arquitetura de aplicações react (PRESENTATIONAL AND CONTAINER COMPONENTS)
+* Hooks e hook customizado
